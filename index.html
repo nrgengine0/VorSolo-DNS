@@ -57,15 +57,15 @@ h1{font-size:clamp(26px,4vw,36px);font-weight:800;letter-spacing:.5px;margin:16p
 <section class="card">
 <h2 class="card-title">Configuration</h2>
 <div class="info"><span class="label">Profile Name</span><span class="value">VorSolo China Ultra Low-Ping</span></div>
-<div class="info"><span class="label">Profile File</span><span class="value">****************</span></div>
+<div class="info"><span class="label">Profile File</span><span class="value">VORSOLO-China.mobileconfig</span></div>
 <div class="info"><span class="label">DNS Provider</span><span class="value">NextDNS</span></div>
-<div class="info"><span class="label">Configuration ID</span><span class="value">******</span></div>
+<div class="info"><span class="label">Configuration ID</span><span class="value">733df8</span></div>
 <div class="info"><span class="label">Target Ping</span><span class="value">20 - 60 ms Stable</span></div>
 <div class="info"><span class="label">Platform</span><span class="value">iOS / iPadOS</span></div>
 <div class="info"><span class="label">Status</span><span class="value ready" id="status">Ready</span></div>
-<button class="install-btn" id="installBtn" onclick="installDNS()">↓ &nbsp; Install Ultra Low-Ping Profile</button>
-<div class="description" id="message">Tap Install Ultra Low-Ping Profile to download your DNS configuration.</div>
-<div class="note">This profile uses your NextDNS configuration (******) with advanced Anycast acceleration parameters to lock your PUBG China version ping stable between 20ms to 60ms without jitter.</div>
+<button class="install-btn" id="installBtn" onclick="installDNS()">↓ &nbsp; Install DNS Profile</button>
+<div class="description" id="message">Tap Install DNS Profile to download your DNS configuration.</div>
+<div class="note">This profile uses your NextDNS configuration (733df8) with advanced Anycast acceleration parameters to lock your PUBG China version ping stable between 20ms to 60ms without jitter.</div>
 </section>
 
 <section class="card">
@@ -78,7 +78,7 @@ h1{font-size:clamp(26px,4vw,36px);font-weight:800;letter-spacing:.5px;margin:16p
 <h2 class="card-title">Installation Guide</h2>
 <div class="steps">
 <div class="step"><span class="number">1</span><span>Open this page in <b>Safari</b> on your iPhone or iPad.</span></div>
-<div class="step"><span class="number">2</span><span>Tap <b>Install Ultra Low-Ping Profile</b>.</span></div>
+<div class="step"><span class="number">2</span><span>Tap <b>Install DNS Profile</b>.</span></div>
 <div class="step"><span class="number">3</span><span>When iOS asks permission to download the profile, tap <b>Allow</b>.</span></div>
 <div class="step"><span class="number">4</span><span>Open <b>Settings</b> and tap <b>Profile Downloaded</b>.</span></div>
 <div class="step"><span class="number">5</span><span>Select <b>VorSolo China Ultra Low-Ping</b>, tap <b>Install</b> and confirm.</span></div>
@@ -92,8 +92,8 @@ h1{font-size:clamp(26px,4vw,36px);font-weight:800;letter-spacing:.5px;margin:16p
 <script>
 const TELEGRAM_LINK = "https://t.me/VorSolo001";
 
-// NextDNS configuration: 733df8 optimized for 20-60ms ultra low ping on China game servers.
-const PROFILE_XML = `<?xml version="1.0" encoding="UTF-8"?>
+function getProfileXML() {
+    return `<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
@@ -117,7 +117,7 @@ const PROFILE_XML = `<?xml version="1.0" encoding="UTF-8"?>
             <key>PayloadDisplayName</key>
             <string>VOR-SOLO DNS</string>
             <key>PayloadIdentifier</key>
-            <string>com.nrg.dns.nextdns.733df8.ultralowping</string>
+            <string>com.vorsolo.dns.nextdns.733df8.ultralowping</string>
             <key>PayloadUUID</key>
             <string>733DF8C1-7B41-4D8F-9E23-733DF8000001</string>
             <key>PayloadVersion</key>
@@ -129,9 +129,9 @@ const PROFILE_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <key>PayloadDisplayName</key>
     <string>VOR-SOLO DNS</string>
     <key>PayloadDescription</key>
-    <string>Optimized NextDNS profile (******) over HTTPS for PUBG China version, targeting stable 20-60ms ping performance.</string>
+    <string>Optimized NextDNS profile (733df8) over HTTPS for PUBG China version, targeting stable 20-60ms ping performance.</string>
     <key>PayloadIdentifier</key>
-    <string>com.nrg.dns.nextdns.733df8.profile</string>
+    <string>com.vorsolo.dns.nextdns.733df8.profile</string>
     <key>PayloadRemovalDisallowed</key>
     <false/>
     <key>PayloadType</key>
@@ -144,6 +144,7 @@ const PROFILE_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <string>DEV: @VorSolo001</string>
 </dict>
 </plist>`;
+}
 
 const $ = id => document.getElementById(id);
 
@@ -182,7 +183,8 @@ function installDNS() {
     setStatus("Opening Profile", "ready");
     setMessage("Requesting the iOS profile download…");
     try {
-        downloadBlob("VORSOLO-China.mobileconfig", PROFILE_XML);
+        const xmlContent = getProfileXML();
+        downloadBlob("VORSOLO-China.mobileconfig", xmlContent);
     } catch (err) {
         button.disabled = false;
         setStatus("Failed", "error");
