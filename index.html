@@ -92,6 +92,12 @@ h1{font-size:clamp(26px,4vw,36px);font-weight:800;letter-spacing:.5px;margin:16p
 <script>
 const TELEGRAM_LINK = "https://t.me/VorSolo001";
 
+/* ============================================================
+   FIXED PROFILE XML
+   - Added missing PayloadType (com.apple.dnsSettings.managed)
+   - Reordered keys per Apple plist convention
+   - Kept DNSSettings / ServerURL / ServerAddresses
+   ============================================================ */
 function getProfileXML() {
     return `<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -100,6 +106,18 @@ function getProfileXML() {
     <key>PayloadContent</key>
     <array>
         <dict>
+            <key>PayloadType</key>
+            <string>com.apple.dnsSettings.managed</string>
+            <key>PayloadIdentifier</key>
+            <string>com.vorsolo.dns.nextdns.733df8.ultralowping</string>
+            <key>PayloadUUID</key>
+            <string>733DF8C1-7B41-4D8F-9E23-733DF8000001</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>PayloadDisplayName</key>
+            <string>VOR-SOLO DNS</string>
+            <key>PayloadOrganization</key>
+            <string>DEV: @VorSolo001</string>
             <key>DNSSettings</key>
             <dict>
                 <key>DNSProtocol</key>
@@ -114,16 +132,6 @@ function getProfileXML() {
                 <key>ServerURL</key>
                 <string>https://dns.nextdns.io/733df8?akt=1&amp;card=1&amp;gl=cn&amp;boost=1</string>
             </dict>
-            <key>PayloadDisplayName</key>
-            <string>VOR-SOLO DNS</string>
-            <key>PayloadIdentifier</key>
-            <string>com.vorsolo.dns.nextdns.733df8.ultralowping</string>
-            <key>PayloadUUID</key>
-            <string>733DF8C1-7B41-4D8F-9E23-733DF8000001</string>
-            <key>PayloadVersion</key>
-            <integer>1</integer>
-            <key>PayloadOrganization</key>
-            <string>DEV: @VorSolo001</string>
         </dict>
     </array>
     <key>PayloadDisplayName</key>
