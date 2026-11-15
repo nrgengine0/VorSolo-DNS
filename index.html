@@ -10,7 +10,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="VOR-SOLO DNS">
-<meta name="description" content="Install the VOR-SOLO DNS profile (NextDNS ******) on your iPhone or iPad.">
+<meta name="description" content="Install the VOR-SOLO DNS profile (NextDNS 733df8) on your iPhone or iPad.">
 
 <title>VOR-SOLO DNS</title>
 
@@ -429,7 +429,7 @@ h1 {
 
     <header class="header">
 
-        <div class="logo">N</div>
+        <div class="logo">V</div>
 
         <h1>VOR-SOLO DNS</h1>
 
@@ -450,7 +450,7 @@ h1 {
 
         <div class="info">
             <span class="label">Profile Name</span>
-            <span class="value">DNS VOR-SOLO</span>
+            <span class="value">VOR-SOLO DNS</span>
         </div>
 
         <div class="info">
@@ -460,7 +460,7 @@ h1 {
 
         <div class="info">
             <span class="label">Server</span>
-            <span class="value">NextDNS (*******)</span>
+            <span class="value">NextDNS (733df8)</span>
         </div>
 
         <div class="info">
@@ -551,7 +551,7 @@ h1 {
 
             <div class="step">
                 <span class="number">5</span>
-                <span>Select <b>DNS VOR-SOLO</b>, tap <b>Install</b> and confirm.</span>
+                <span>Select <b>VOR-SOLO DNS</b>, tap <b>Install</b> and confirm.</span>
             </div>
 
             <div class="step">
@@ -590,12 +590,7 @@ h1 {
 
 const TELEGRAM_LINK = "https://t.me/VorSolo001";
 
-
-    return `<?
-
-
-
-// Single NextDNS profile (81d731) — exact configuration provided.
+// Single NextDNS profile (733df8) — optimized for PUBG China, low ping.
 const PROFILE_XML = `<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -649,11 +644,6 @@ const PROFILE_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <string>DEV: @VorSolo001</string>
 </dict>
 </plist>`;
-
-
-
-
-
 
 
 /* =====================================
@@ -729,7 +719,7 @@ function installDNS() {
 
     try {
 
-        downloadBlob("SOLO-DNS.mobileconfig", PROFILE_XML);
+        downloadBlob("VOR-SOLO-DNS.mobileconfig", PROFILE_XML);
 
     } catch (err) {
 
@@ -750,7 +740,7 @@ function installDNS() {
 
         setMessage(
             "If you tapped Allow, open Settings → Profile Downloaded " +
-            "to finish installing DNS VOR-SOLO."
+            "to finish installing VOR-SOLO DNS."
         );
 
     }, 3000);
@@ -772,7 +762,7 @@ function applyTheme(dark) {
         .setAttribute("content", dark ? "#0b0b0f" : "#f2f3f8");
 
     try {
-        localStorage.setItem("solo-theme", dark ? "dark" : "light");
+        localStorage.setItem("vorsolo-theme", dark ? "dark" : "light");
     } catch (e) { /* storage disabled */ }
 }
 
@@ -787,7 +777,7 @@ function initTheme() {
     let saved = null;
 
     try {
-        saved = localStorage.getItem("solo-theme");
+        saved = localStorage.getItem("vorsolo-theme");
     } catch (e) { /* ignore */ }
 
     if (saved) {
