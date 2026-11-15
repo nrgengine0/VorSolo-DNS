@@ -6,9 +6,9 @@
 <meta name="theme-color" content="#f2f3f8">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="VorSolo DNS">
-<meta name="description" content="Install the VorSolo China Game Ultra Low-Ping DNS profile using your NextDNS configuration 733df8.">
-<title>VOR-SOLO DNS</title>
+<meta name="apple-mobile-web-app-title" content="NRG DNS">
+<meta name="description" content="Install the NRG China Game DNS profile using your NextDNS configuration 733df8.">
+<title>NRG DNS</title>
 <style>
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 :root{--bg:#f2f3f8;--card:#fff;--text:#111117;--secondary:#7c7c8a;--border:#e7e7ef;--blue:#0a84ff;--blue-soft:rgba(10,132,255,.10);--green:#15b364;--shadow:0 4px 22px rgba(16,20,40,.06)}
@@ -50,49 +50,49 @@ h1{font-size:clamp(26px,4vw,36px);font-weight:800;letter-spacing:.5px;margin:16p
 <div class="container">
 <header class="header">
 <div class="logo">N</div>
-<h1>VorSolo DNS</h1>
-<p class="subtitle">China Game Ultra Low-Ping DNS · Secure DoH for iOS &amp; iPadOS</p>
+<h1>NRG DNS</h1>
+<p class="subtitle">China Game DNS · Secure DNS over HTTPS for iOS &amp; iPadOS</p>
 </header>
 
 <section class="card">
 <h2 class="card-title">Configuration</h2>
-<div class="info"><span class="label">Profile Name</span><span class="value">VorSolo China Ultra Low-Ping</span></div>
-<div class="info"><span class="label">Profile File</span><span class="value">****************</span></div>
+<div class="info"><span class="label">Profile Name</span><span class="value">NRG China Game DNS</span></div>
+<div class="info"><span class="label">Profile File</span><span class="value">NRG-China-Game-DNS.mobileconfig</span></div>
 <div class="info"><span class="label">DNS Provider</span><span class="value">NextDNS</span></div>
-<div class="info"><span class="label">Configuration ID</span><span class="value">******</span></div>
-<div class="info"><span class="label">Target Ping</span><span class="value">20 - 60 ms Stable</span></div>
+<div class="info"><span class="label">Configuration ID</span><span class="value">733df8</span></div>
+<div class="info"><span class="label">Protocol</span><span class="value">DNS over HTTPS</span></div>
 <div class="info"><span class="label">Platform</span><span class="value">iOS / iPadOS</span></div>
 <div class="info"><span class="label">Status</span><span class="value ready" id="status">Ready</span></div>
-<button class="install-btn" id="installBtn" onclick="installDNS()">↓ &nbsp; Install Ultra Low-Ping Profile</button>
-<div class="description" id="message">Tap Install Ultra Low-Ping Profile to download your DNS configuration.</div>
-<div class="note">This profile uses your NextDNS configuration (******) with advanced Anycast acceleration parameters to lock your PUBG China version ping stable between 20ms to 60ms without jitter.</div>
+<button class="install-btn" id="installBtn" onclick="installDNS()">↓ &nbsp; Install DNS Profile</button>
+<div class="description" id="message">Tap Install DNS Profile to download the NRG profile.</div>
+<div class="note">This profile uses your existing NextDNS configuration (733df8) optimized with auto-routing parameters to stabilize your PUBG China version ping around 70-90ms.</div>
 </section>
 
 <section class="card">
 <h2 class="card-title">Telegram Community</h2>
 <p class="steps">Join our Telegram community for updates, support and announcements.</p>
-<a class="telegram-btn" id="telegramBtn" href="https://t.me/VorSolo001" target="_blank" rel="noopener noreferrer">✈ &nbsp; JOIN TELEGRAM</a>
+<a class="telegram-btn" id="telegramBtn" href="https://t.me/official_channel_NRG_dev" target="_blank" rel="noopener noreferrer">✈ &nbsp; JOIN TELEGRAM</a>
 </section>
 
 <section class="card">
 <h2 class="card-title">Installation Guide</h2>
 <div class="steps">
 <div class="step"><span class="number">1</span><span>Open this page in <b>Safari</b> on your iPhone or iPad.</span></div>
-<div class="step"><span class="number">2</span><span>Tap <b>Install Ultra Low-Ping Profile</b>.</span></div>
+<div class="step"><span class="number">2</span><span>Tap <b>Install DNS Profile</b>.</span></div>
 <div class="step"><span class="number">3</span><span>When iOS asks permission to download the profile, tap <b>Allow</b>.</span></div>
 <div class="step"><span class="number">4</span><span>Open <b>Settings</b> and tap <b>Profile Downloaded</b>.</span></div>
-<div class="step"><span class="number">5</span><span>Select <b>VorSolo China Ultra Low-Ping</b>, tap <b>Install</b> and confirm.</span></div>
+<div class="step"><span class="number">5</span><span>Select <b>NRG China Game DNS</b>, tap <b>Install</b> and confirm.</span></div>
 <div class="step"><span class="number">6</span><span>Verify under <b>Settings → General → VPN &amp; Device Management</b>.</span></div>
 </div>
 </section>
 
-<footer class="footer"><b>VorSolo DNS</b><br>iOS DNS Configuration Installer<br><br>© 2026 VorSolo DNS. All Rights Reserved.</footer>
+<footer class="footer"><b>NRG DNS</b><br>iOS DNS Configuration Installer<br><br>© 2026 NRG DNS. All Rights Reserved.</footer>
 </div>
 
 <script>
-const TELEGRAM_LINK = "https://t.me/VorSolo001";
+const TELEGRAM_LINK = "https://t.me/official_channel_NRG_dev";
 
-// NextDNS configuration: 733df8 optimized for 20-60ms ultra low ping on China game servers.
+// NextDNS configuration: 733df8 optimized for China PUBG version low ping.
 const PROFILE_XML = `<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -112,36 +112,36 @@ const PROFILE_XML = `<?xml version="1.0" encoding="UTF-8"?>
                     <string>45.90.30.172</string>
                 </array>
                 <key>ServerURL</key>
-                <string>https://dns.nextdns.io/733df8?akt=1&amp;card=1&amp;gl=cn&amp;boost=1</string>
+                <string>https://dns.nextdns.io/733df8?akt=1&amp;card=1&amp;gl=cn</string>
             </dict>
             <key>PayloadDisplayName</key>
-            <string>VOR-SOLO DNS</string>
+            <string>NRG China Game DNS</string>
             <key>PayloadIdentifier</key>
-            <string>com.nrg.dns.nextdns.733df8.ultralowping</string>
+            <string>com.nrg.dns.nextdns.733df8.dns</string>
             <key>PayloadUUID</key>
-            <string>733DF8C1-7B41-4D8F-9E23-733DF8000001</string>
+            <string>2C9B3E1A-7B41-4D8F-9E23-733DF8000001</string>
             <key>PayloadVersion</key>
             <integer>1</integer>
             <key>PayloadOrganization</key>
-            <string>DEV: @VorSolo001</string>
+            <string>NRG</string>
         </dict>
     </array>
     <key>PayloadDisplayName</key>
-    <string>VOR-SOLO DNS</string>
+    <string>NRG China Game DNS</string>
     <key>PayloadDescription</key>
-    <string>Optimized NextDNS profile (******) over HTTPS for PUBG China version, targeting stable 20-60ms ping performance.</string>
+    <string>Uses NextDNS configuration 733df8 over DNS-over-HTTPS optimized for PUBG China version low ping stability.</string>
     <key>PayloadIdentifier</key>
-    <string>com.nrg.dns.nextdns.733df8.profile</string>
+    <string>com.nrg.dns.nextdns.733df8</string>
     <key>PayloadRemovalDisallowed</key>
     <false/>
     <key>PayloadType</key>
     <string>Configuration</string>
     <key>PayloadUUID</key>
-    <string>733DF8C1-7B41-4D8F-9E23-733DF8000002</string>
+    <string>2C9B3E1A-7B41-4D8F-9E23-733DF8000002</string>
     <key>PayloadVersion</key>
     <integer>1</integer>
     <key>PayloadOrganization</key>
-    <string>DEV: @VorSolo001</string>
+    <string>NRG</string>
 </dict>
 </plist>`;
 
@@ -182,7 +182,7 @@ function installDNS() {
     setStatus("Opening Profile", "ready");
     setMessage("Requesting the iOS profile download…");
     try {
-        downloadBlob("VORSOLO-China.mobileconfig", PROFILE_XML);
+        downloadBlob("NRG-China-Game-DNS.mobileconfig", PROFILE_XML);
     } catch (err) {
         button.disabled = false;
         setStatus("Failed", "error");
@@ -192,21 +192,21 @@ function installDNS() {
     setTimeout(() => {
         button.disabled = false;
         setStatus("Profile Requested", "ready");
-        setMessage("If you tapped Allow, open Settings → Profile Downloaded to finish installing your DNS profile.");
+        setMessage("If you tapped Allow, open Settings → Profile Downloaded to finish installing NRG China Game DNS.");
     }, 2500);
 }
 function applyTheme(dark) {
     document.body.classList.toggle("dark", dark);
     $("themeBtn").textContent = dark ? "☀️" : "🌙";
     document.querySelector('meta[name="theme-color"]').setAttribute("content", dark ? "#0b0b0f" : "#f2f3f8");
-    try { localStorage.setItem("vorsolo-theme", dark ? "dark" : "light"); } catch (e) {}
+    try { localStorage.setItem("nrg-theme", dark ? "dark" : "light"); } catch (e) {}
 }
 function toggleTheme() {
     applyTheme(!document.body.classList.contains("dark"));
 }
 function initTheme() {
     let saved = null;
-    try { saved = localStorage.getItem("vorsolo-theme"); } catch (e) {}
+    try { saved = localStorage.getItem("nrg-theme"); } catch (e) {}
     if (saved) applyTheme(saved === "dark");
     else applyTheme(window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches);
 }
